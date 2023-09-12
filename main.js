@@ -1,3 +1,5 @@
+/* */ 
+
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
@@ -30,14 +32,15 @@ function result() {
     newStory = newStory.replaceAll("Bob", name);
 
   }
-
+/* these following lines will convert to UK measurements when the uk button is checked */
   if(document.getElementById("uk").checked) {
 
-    const pounds = 300;
-    const temperature =  Math.round(94);
-
+    const weight = Math.round(300/14) + " stone";
+    const temperature =  Math.round((94-32)*(5/9)) + " centigrade";
+    newStory = newStory.replaceAll("94 fahrenheit", temperature);
+    newStory = newStory.replaceAll("300 pounds", weight);
   }
 
-  story.textContent = ;
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
